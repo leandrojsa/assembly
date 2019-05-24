@@ -6,7 +6,7 @@ segment .data
   
 
  filename db "test.txt", 0
-  buflen dw 2048
+ buflen dd 2048
 
 
 segment .bss
@@ -23,14 +23,14 @@ asm_main:
     
     push filename
     push buffer
-    push buflen
+    push dword [buflen]
     call read_file
     add esp, 12
     
     mov esi, buffer
     cld 
     print:
-    lodsb
+        lodsb ;al = [esi] e esi+=1
         cmp al, 0
         je exit
         call print_char

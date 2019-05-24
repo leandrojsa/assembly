@@ -50,7 +50,11 @@ init:
     pop ebp
 ret
 
-;
+; typedef struct{
+;    int value;
+;    node *esq;
+;    node *dir;
+;} node
 create_node:
     push ebp
     mov ebp, esp
