@@ -29,7 +29,7 @@ push ebp
 mov ebp, esp
     mov eax, 8
     mov ebx, [ebp+16] ;filename
-    mov ecx, 0x0700
+    mov ecx, 0x0777
     int 0x80
     mov ebx, eax
     mov eax, 4
